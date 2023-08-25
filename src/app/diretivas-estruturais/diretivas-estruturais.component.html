@@ -1,0 +1,53 @@
+xxxx 
+<p *ngIf="condition; else thisIsInsane"> APARECEU DINAMICAMENTE!! </p>
+<ng-template #thisIsInsane>
+  <p> Esse ELSE é INSANO </p>
+</ng-template>
+
+<br />
+<br />
+<hr />
+
+<p *ngIf="conditionClick">
+  True!
+</p>
+
+<p *ngIf="!conditionClick">
+  False!
+</p>
+
+<button (click)="onClick()"> Toggle conditionClick </button>
+
+<br />
+<br />
+<hr />
+
+<ul>
+  <li
+    *ngFor="let item of list; let i = index"
+    (click)="onClickEventList(i)"
+  >
+  [{{ i }}] - {{ item.nome }}
+  </li>
+</ul>
+
+<button (click)="onClickAddList()"> Adiciona item na lista </button>
+
+<br />
+<br />
+<hr />
+
+<input type="text" [(ngModel)]="nome" />
+<div
+  [ngSwitch]="nome"
+>
+  <p *ngSwitchCase="'Augusto'">
+    Augusto
+  </p>
+  <p *ngSwitchCase="'Adriana'">
+    Adriana
+  </p>
+  <p *ngSwitchDefault>
+    Nome não encontrado
+  </p>
+</div>

@@ -1,0 +1,44 @@
+<p [ngClass]="{'active': value, 'disabled': !value}">NgClass</p>
+<p [ngStyle]="{'height': height, 'backgroundColor': backgroundColor, 'color': 'white'}">NgStyle</p>
+
+<hr />
+
+<input [(ngModel)]="name" /> 
+<p> {{ name }} </p>
+<button (click)="add()"> Adicionar novo valor </button>
+
+<li *ngFor="let item of list">
+  {{ item.name }}
+</li>
+
+
+<hr />
+<h2> Ng Template </h2> 
+<ng-template ngFor let-item [ngForOf]="list">
+  <p> {{ item.name }} </p>
+</ng-template>
+
+<hr />
+<h2> Ng Content </h2> 
+<ng-content select="h1"></ng-content>
+
+<p> CONTEUDO DO MEIO </p>
+
+<ng-content select="hr"></ng-content>
+
+<br />
+<br />
+<hr />
+
+<h2> Pipes </h2>
+<input [(ngModel)]="name" />
+<button (click)="add()"> Adicionar novo valor </button>
+
+<ng-template ngFor let-item [ngForOf]="list">
+  <p> {{ item.name | uppercase }} </p>
+</ng-template>
+
+<hr />
+
+<p> {{ date | date: 'dd/MM/yyyy' }} </p>
+
