@@ -32,8 +32,16 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
       <hr />
     </app-diretivas-atributos> -->
     
-    <app-new-component></app-new-component>
-    
+    <!-- <app-new-component></app-new-component> -->
+
+    <!-- <app-input [contador]="addValue"></app-input>
+    <button (click)="add()">Adicionar</button> -->
+
+    <ng-template [ngIf]="getData">
+      <h1> Nome: {{ getData.name }} </h1>
+      <h1> Idade: {{ getData.age }} </h1>
+    </ng-template>
+    <app-output (sendData)="setData($event)"></app-output>
 
     <router-outlet />
   `
@@ -51,6 +59,18 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 
   public toggleComponente(): void {
     this.destruir = !this.destruir
+  }
+
+  public addValue: number = 10
+
+  public add(): void {
+    this.addValue += 1
+  }
+
+  public getData: { name: string, age: number } | undefined
+
+  public setData(data: { name: string, age: number }) {
+    this.getData = data
   }
 
   ngOnInit(): void { // Ciclo de vida inicial do Angular, roda o ngOnInit sempre que o componente for montado

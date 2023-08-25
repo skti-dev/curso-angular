@@ -1,0 +1,8 @@
+<p
+  *ngFor="let item of list; let i = index"
+>
+  Nome: {{ item.name }} 
+  || 
+  Idade: {{ item.age }}
+  <button (click)="getData(i)"> Recuperar esses dados </button>
+</p>
