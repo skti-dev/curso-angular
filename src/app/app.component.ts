@@ -27,10 +27,13 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
     <hr /> -->
 
     <!-- <app-diretivas-estruturais></app-diretivas-estruturais> -->
-    <app-diretivas-atributos>
+    <!-- <app-diretivas-atributos>
       <h1> Utilizando ngContent para escrever um título </h1> 
       <hr />
-    </app-diretivas-atributos>
+    </app-diretivas-atributos> -->
+    
+    <app-new-component></app-new-component>
+    
 
     <router-outlet />
   `
