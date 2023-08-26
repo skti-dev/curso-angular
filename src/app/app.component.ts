@@ -37,11 +37,16 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
     <!-- <app-input [contador]="addValue"></app-input>
     <button (click)="add()">Adicionar</button> -->
 
-    <ng-template [ngIf]="getData">
+    <!-- <ng-template [ngIf]="getData">
       <h1> Nome: {{ getData.name }} </h1>
       <h1> Idade: {{ getData.age }} </h1>
     </ng-template>
-    <app-output (sendData)="setData($event)"></app-output>
+    <app-output (sendData)="setData($event)"></app-output> -->
+
+    <!-- <app-food-add></app-food-add>
+    <app-food-list></app-food-list> -->
+
+    <app-forms></app-forms>
 
     <router-outlet />
   `
